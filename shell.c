@@ -20,7 +20,7 @@ int main(__attribute__((unused)) int ac, __attribute__((unused)) char **argv)
 			return (non_interactive());
 
 		print_prompt("simple_shell$ ");
-		nread = _getline(&buffer, &len, stdin);
+		nread = getline(&buffer, &len, stdin);
 		if (nread == -1)
 		{
 			printf("\n");
@@ -74,7 +74,7 @@ int non_interactive(void)
 	ssize_t nread;
 	int i = 0;
 
-	nread = _getline(&buffer, &len, stdin);
+	nread = getline(&buffer, &len, stdin);
 	if (nread == -1)
 		return (-1);
 	buf2 = strdup(buffer);
